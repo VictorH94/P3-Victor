@@ -1,0 +1,176 @@
+@import "reset.scss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap');
+@import "variables.scss";
+@import "mixins.scss";
+
+%flexcenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%flexcolumncenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+body, html {
+    font-family: 'Roboto', sans-serif;
+}
+
+img, h1, h2 {
+    font-family: 'Shrikhand', cursive;
+}
+
+#main-header {
+    font-family: 'Shrikhand', cursive;
+    background-color: $white;
+    height: 100px;
+    box-shadow: 2px 2px 2px 1px rgba(127, 127, 127, 0.2);
+    @extend %flexcenter;
+    img {
+        width: 200px;
+        padding-top: 15px;
+    }
+}
+
+#main-ctnr {
+    width: 100%;
+    height: auto;
+}   
+
+#main-page-ctnr {
+    max-width: 1600px;
+    margin: 0 auto
+}
+
+#search-section {
+    background-color: $light-grey;
+    height: 85px;
+    @extend %flexcenter;
+    i {
+        font-size: 20px;
+    }
+    input {
+        border: none;
+        background-color: transparent;
+        font-size: 20px;
+        width: 150px;
+        padding-left: 14px;
+   }
+}
+
+#search-restaurant {
+    background-color: $white-smoke;
+    height: 350px;
+    @extend %flexcolumncenter;
+    h2 {
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center;
+    }
+    p {
+        font-size: 22px;
+        text-align: center;
+        font-weight: 300;
+        margin: 24px 0;
+    }
+    button {
+        background-color: $secondary;
+        border: none;
+        border-radius: 25px;
+        font-size: 20px;
+        padding: 12px 20px;
+        background-image: linear-gradient(to top, rgba(147, 86, 220, 0.8), rgba(255, 121, 218, 0.8));
+        cursor: pointer;
+        color: #fff;
+        transition-duration: 0.30s;
+        box-shadow: 0px 1px 5px 0px rgb(0 0 0 / 73%);
+        &:hover {
+            transform: scale(1);
+            opacity: 0.7;
+        }
+    }
+}
+
+#restaurant-choice {
+    background-color: $white;
+    height: 400px;
+    
+    h2 {
+        font-size: 27px;
+        font-weight: 900;
+        margin-top: 30px;
+        padding: 25px 20px;        
+    }
+
+    ol {
+        @extend %flexcolumncenter;
+        gap: 16px;
+        width: 100%;
+        counter-reset: number;
+        list-style-type: none;
+    }
+
+    & li {
+        @extend %flexcenter;
+        font-size: 22px;
+        background-color: $white-smoke;
+        border-radius: 20px;
+        height: 70px;
+        width: 85%;
+        padding: 10px 20px;
+        box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.10);
+        margin-left: 10px;
+
+        &:hover {
+            @include appearance;
+        }
+        position: relative;
+
+        &::before {
+            counter-increment: number;
+            content: counters(number,".") " ";
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            position: absolute;
+            left: -12px;
+            background-color: $primary;
+            color: #fff;
+            @extend %flexcenter;
+        }
+    } 
+    
+        & i {
+            font-size: 25px;
+            padding-right: 20px;
+            color: $grey;
+        }
+        & span {
+            padding-left: 10px;
+            font-size: 20px;
+        }
+}
+
+#restaurants {
+    background-color: $white-smoke;
+    height: 1600px;
+    
+    h2 {
+        font-size: 10px;
+    }
+
+    .menu_card {
+        height: auto;
+        padding: 15px 15px;
+            
+    }
+        
+}
+
+   
+
+  

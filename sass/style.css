@@ -186,6 +186,9 @@ body, html {
   padding-right: 20px;
   color: #7e7e7e;
 }
+#restaurant-choice i:hover {
+  color: #9356DC;
+}
 #restaurant-choice span {
   padding-left: 10px;
   font-size: 20px;
@@ -233,6 +236,7 @@ body, html {
 #restaurants .card-restaurant .menu_card .card-bloc .menu_description {
   background-color: #fff;
   padding: 15px 20px 15px 15px;
+  position: relative;
 }
 #restaurants .card-restaurant .menu_card .card-bloc .menu_description .menu_card_description h3 {
   color: #000;
@@ -242,12 +246,22 @@ body, html {
   color: #A9A9A9;
   font-weight: bold;
 }
-#restaurants .card-restaurant .menu_card .card-bloc .menu_description .heart {
-  height: 30pw;
-  width: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+#restaurants .card-restaurant .menu_card .card-bloc .menu_description i {
+  position: absolute;
+  right: 16px;
+  transform: translateY(-50%);
+}
+#restaurants .card-restaurant .menu_card .card-bloc .menu_description .icon-solid {
+  color: transparent;
+  background-image: linear-gradient(to top, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 0;
+  transition: all 200ms ease-in-out;
+}
+#restaurants .card-restaurant .menu_card .card-bloc .menu_description:hover .icon-solid {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.02);
 }
 
 #footer {

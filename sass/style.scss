@@ -1,7 +1,7 @@
-@import "_reset.scss";
-@import "_font.scss";
-@import "_variables.scss";
-@import "_mixins.scss";
+@import "reset/reset.scss";
+@import "font/font.scss";
+@import "variables/variables.scss";
+@import "mixins/mixins.scss";
 
 %flexcenter {
     display: flex;
@@ -28,11 +28,13 @@
     align-items: center;
 }
 
+@mixin linear-gradient($gradient: 0.8) {
+    background-image: linear-gradient(to top, rgba(147, 86, 220, $gradient), rgba(255, 121, 218, $gradient));
+}
+
 body, html {
     font-family: 'Roboto', sans-serif;
 }
-
-
 
 #main-header {
     font-family: 'Shrikhand', cursive;
@@ -156,6 +158,10 @@ body, html {
             font-size: 25px;
             padding-right: 20px;
             color: $grey;
+
+            &:hover {
+                color: $primary;
+            }
         }
 
         & span {
@@ -212,7 +218,8 @@ body, html {
                     background-color: $white;
                     @extend %flexbetweencenter;
                     padding: 15px 20px 15px 15px;
-
+                    position: relative;
+                    
                     .menu_card_description {
                         @extend %flexcolumstart;
 
@@ -226,14 +233,27 @@ body, html {
                             font-weight: bold;
                         }
                     }
-
-                    .heart {
-                        height: 30pw;
-                        width: 30px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
+                    
+                    i {
+                        position: absolute;
+                        right: 16px;
+                        transform: translateY(-50%);
                     }
+
+                    .icon-solid {
+                        color: transparent;
+                        @include linear-gradient(0.9);
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        opacity: 0;
+                        transition: all 200ms ease-in-out;
+                    }
+
+                    &:hover .icon-solid {
+                        opacity: 1;
+                        transform: translateY(-50%) scale(1.02);
+                    }
+
                 }
             }
         }

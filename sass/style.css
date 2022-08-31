@@ -107,7 +107,6 @@ td, th {
   font-size: 20px;
   position: absolute;
   left: 35px;
-  /* bottom: 12px; */
   top: 50%;
   transform: translate(-50%, -50%);
 }

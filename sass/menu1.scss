@@ -19,7 +19,8 @@
                 font-size: 20px;
                 position: absolute;
                 left: 35px;
-                 top: 50%;
+                /* bottom: 12px; */
+                top: 50%;
                 transform: translate(-50%, -50%);
             }
         }
@@ -154,14 +155,14 @@
                 }
                 .icon-bloc {
                     background-color: #99e2d0;
-                    margin: -16px -80px -16px 16px;
-                    width: 64px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    transition-duration: 0.5s;
                     height: 80px;
+                    width: 64px;
+                    @extend %flexcenter;
+                    margin: -16px -80px -16px 16px;
+                    transition-duration: 0.5s;
                     border-radius: 0 14px 14px 0;
+                    position: relative;
+                    left: 15px;
                     
                     .icon-confirmation {
                         height: 25px;
@@ -194,7 +195,15 @@
         .order-menu {
             width: 175px;
             background-color: #FF79DA;
-            @include button;
+            border: none;
+            border-radius: 25px;
+            font-size: 20px;
+            padding: 12px 20px;
+            background-image: linear-gradient(to top, rgba(147, 86, 220, 0.8), rgba(255, 121, 218, 0.8));
+            cursor: pointer;
+            color: #fff;
+            transition-duration: 0.3s;
+            box-shadow: 0px 1px 5px 0px rgb(0 0 0 / 73%);
         }
     }
 }    

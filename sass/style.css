@@ -45,7 +45,7 @@ td, th {
   padding: 0;
 }
 
-#restaurant-choice li::before, #restaurant-choice li, #search-section, #main-header, #main-ctnr .order-ctnr, #header-menu .header-ctnr a, #header-menu .header-ctnr {
+#restaurant-choice li::before, #restaurant-choice li, #search-section, #main-header, #main-ctnr .order-ctnr, #main-ctnr .menu-ctnr .section-ctnr-menuEntry .descript-price-confirmation .icon-bloc, #header-menu .header-ctnr a, #header-menu .header-ctnr {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -70,7 +70,7 @@ td, th {
   align-items: center;
 }
 
-#restaurant-choice li::before, #restaurant-choice li, #search-section, #main-header, #main-ctnr .order-ctnr, #header-menu .header-ctnr a, #header-menu .header-ctnr {
+#restaurant-choice li::before, #restaurant-choice li, #search-section, #main-header, #main-ctnr .order-ctnr, #main-ctnr .menu-ctnr .section-ctnr-menuEntry .descript-price-confirmation .icon-bloc, #header-menu .header-ctnr a, #header-menu .header-ctnr {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -107,6 +107,7 @@ td, th {
   font-size: 20px;
   position: absolute;
   left: 35px;
+  /* bottom: 12px; */
   top: 50%;
   transform: translate(-50%, -50%);
 }
@@ -228,14 +229,13 @@ td, th {
 }
 #main-ctnr .menu-ctnr .section-ctnr-menuEntry .descript-price-confirmation .icon-bloc {
   background-color: #99e2d0;
-  margin: -16px -80px -16px 16px;
-  width: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition-duration: 0.5s;
   height: 80px;
+  width: 64px;
+  margin: -16px -80px -16px 16px;
+  transition-duration: 0.5s;
   border-radius: 0 14px 14px 0;
+  position: relative;
+  left: 15px;
 }
 #main-ctnr .menu-ctnr .section-ctnr-menuEntry .descript-price-confirmation .icon-bloc .icon-confirmation {
   height: 25px;

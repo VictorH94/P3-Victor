@@ -1,3 +1,23 @@
 @mixin appearance {
     transform: scale(1.02);
 }
+
+@mixin linear-gradient($gradient: 0.8) {
+    background-image: linear-gradient(to top, rgba(147, 86, 220, $gradient), rgba(255, 121, 218, $gradient));
+}
+
+@mixin font-family {
+    font-family: Shrikhand,"cursive";
+}
+
+@mixin button {
+    border: none;
+    border-radius: 25px;
+    font-size: 20px;
+    padding: 12px 20px;
+    @include linear-gradient;
+    cursor: pointer;
+    color: #fff;
+    transition-duration: 0.30s;
+    box-shadow: 0px 1px 5px 0px rgb(0 0 0 / 73%);
+}

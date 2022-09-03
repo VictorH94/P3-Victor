@@ -2,6 +2,16 @@
 @import "mixins/mixins.scss";
 @import "extend/extend.scss";
 
+@keyframes menuItemAppear {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 
 #header-menu {
     font-family: "Shrikhand", sans-serif;
@@ -84,20 +94,21 @@
         }           
     }
     
-    .menu-ctnr {
+    #menu-ctnr {
         display: flex;
-        flex-direction: column;
-        padding: 16px 16px;
+        flex-wrap: wrap;       
+        justify-content: center;
+        align-items: center;
+        width: 100%;
         background-color: $white-smoke;
-        margin-bottom: -30px;
-
-        .section-ctnr-menuEntry {
+        
+        .section-menu-ctnr {
             display: flex;
             flex-direction: column;
-            max-width: 100%;
+            width: 92%;
             overflow: hidden;
 
-            h3{
+            h3 {
                 text-transform: uppercase;
                 position: relative;
                 padding-bottom: 8px;
@@ -113,80 +124,96 @@
                     bottom: 0;
                 }
             }
-            
-            .descript-price-confirmation {
-                background-color: $white;
-                padding: 16px;
+
+            .menu-list {
+                list-style-type: none;
+                padding: 0;
+                width: 100%;
+                margin: 10px 0;
                 display: flex;
-                justify-content: space-between;
+                flex-wrap: wrap;
+                justify-content: center;
                 align-items: center;
-                border-radius: 12px;
-                margin: 16px 0;
-                box-shadow: 4px 4px 16px rgb(0 0 0 / 10%);
-                overflow: hidden;
-                cursor: pointer;
-                
-                .header-descript {
-                    white-space: nowrap;
-                    text-overflow: ellipsis;
-                    overflow: hidden;
-
-                    h4 {
-                        font-weight: bold;
-                    }
-
-                    p {
-                        margin: 0;
-                    }
-
-                    & h4, p {
-                        white-space: nowrap;
-                        text-overflow: ellipsis;
-                        overflow: hidden;
-                    }
-                }
-
-                .price {
-                    font-weight: bold;
-                    display: flex;
-                    justify-content: flex-end;
-                    align-items: flex-end;
-                    padding-left: 8px;
-                }
-                .icon-bloc {
-                    background-color: #99e2d0;
-                    height: 80px;
-                    width: 64px;
-                    @extend %flexcenter;
-                    margin: -16px -80px -16px 16px;
-                    transition-duration: 0.5s;
-                    border-radius: 0 14px 14px 0;
+                li {
+                    opacity: 0;
+                    animation: menuItemAppear 0.78s ease-in-out forwards;
+                    width: 388px;
+                    background-color: $white;
+                    border-radius: 12px;
+                    box-shadow: 4px 4px 16px rgb(0 0 0 / 10%);
                     position: relative;
-                    left: 15px;
-                    
-                    .icon-confirmation {
-                        height: 25px;
-                        width: 25px;
-                        background-color: #fff;
+                    margin: 10px auto 10px auto;
+                    overflow: hidden;
+                    &:nth-child(2) {
+                        animation-delay: 200ms;
+                    }
+                    &:nth-child(3) {
+                        animation-delay: 400ms;
+                    }
+                    .menu-ctnr {
+                        padding: 10px;
+                        width: 100%;
+                        box-sizing: border-box;
+                        h4 {
+                            margin: 0 0 10px 0;
+                            width: 100%;
+                            font-size: 20px;
+                            font-weight: 700;
+                        }
+                
+                        p {
+                            margin: 0;
+                        }
+                        .menu-item-description {
+                            width: 88%;
+                        }
+            
+                        .menu-item-price {
+                            text-align: right;
+                            margin-top: -20px;
+                            width: 100%;
+                            font-weight: 700;
+                        }
+                
+                        & > * {
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+                    }
+                    .menu-selected-checkbox {
+                        background-color: green;
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        right: -22%;
+                        width: 14%;
+                        border-radius: 0 6px 6px 0;
                         display: flex;
-                        align-items: center;
                         justify-content: center;
-                        border-radius: 100px;
+                        align-items: center;
+                        i {
+                            background-color: white;
+                            padding: 3px;
+                            border-radius: 50%;
+                        }
                     }
-                }
-
-                &:hover {
-                    .icon-bloc {
-                        margin-right: 0;
-                    }
-
-                    i {
-                        animation: icon-spin .5s ease-in-out;
-                    }
+                    
+                    &:hover {
+                        .menu-ctnr { 
+                            transition: 0.4s linear width;
+                            width: 78%;
+                        }
+                        .menu-selected-checkbox { 
+                            transition: 0.4s linear right;
+                            right: 0;
+                        }
+                    } 
                 }
             }
         }
     }
+    
     .order-ctnr {
         background-color: $white-smoke;
         height:110px;

@@ -45,7 +45,7 @@ td, th {
   padding: 0;
 }
 
-#restaurant-choice li::before, #restaurant-choice li, #search-section, #main-header, #main-ctnr .order-ctnr, #main-ctnr .menu-ctnr .section-ctnr-menuEntry .descript-price-confirmation .icon-bloc, #header-menu .header-ctnr a, #header-menu .header-ctnr {
+#restaurant-choice li::before, #restaurant-choice li, #search-section, #main-header, #main-ctnr .order-ctnr, #header-menu .header-ctnr a, #header-menu .header-ctnr {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -70,7 +70,7 @@ td, th {
   align-items: center;
 }
 
-#restaurant-choice li::before, #restaurant-choice li, #search-section, #main-header, #main-ctnr .order-ctnr, #main-ctnr .menu-ctnr .section-ctnr-menuEntry .descript-price-confirmation .icon-bloc, #header-menu .header-ctnr a, #header-menu .header-ctnr {
+#restaurant-choice li::before, #restaurant-choice li, #search-section, #main-header, #main-ctnr .order-ctnr, #header-menu .header-ctnr a, #header-menu .header-ctnr {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -95,6 +95,27 @@ td, th {
   align-items: center;
 }
 
+@-webkit-keyframes menuItemAppear {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes menuItemAppear {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 #header-menu {
   font-family: "Shrikhand", sans-serif;
   position: relative;
@@ -164,26 +185,27 @@ td, th {
   opacity: 1;
   transform: translateY(-50%) scale(1.02);
 }
-#main-ctnr .menu-ctnr {
+#main-ctnr #menu-ctnr {
   display: flex;
-  flex-direction: column;
-  padding: 16px 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   background-color: #f6f6f6;
-  margin-bottom: -30px;
 }
-#main-ctnr .menu-ctnr .section-ctnr-menuEntry {
+#main-ctnr #menu-ctnr .section-menu-ctnr {
   display: flex;
   flex-direction: column;
-  max-width: 100%;
+  width: 92%;
   overflow: hidden;
 }
-#main-ctnr .menu-ctnr .section-ctnr-menuEntry h3 {
+#main-ctnr #menu-ctnr .section-menu-ctnr h3 {
   text-transform: uppercase;
   position: relative;
   padding-bottom: 8px;
   font-weight: 400;
 }
-#main-ctnr .menu-ctnr .section-ctnr-menuEntry h3::after {
+#main-ctnr #menu-ctnr .section-menu-ctnr h3::after {
   content: "";
   height: 4px;
   width: 42px;
@@ -192,66 +214,88 @@ td, th {
   left: 0;
   bottom: 0;
 }
-#main-ctnr .menu-ctnr .section-ctnr-menuEntry .descript-price-confirmation {
-  background-color: #fff;
-  padding: 16px;
+#main-ctnr #menu-ctnr .section-menu-ctnr .menu-list {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  margin: 10px 0;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
+}
+#main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li {
+  opacity: 0;
+  -webkit-animation: menuItemAppear 0.78s ease-in-out forwards;
+          animation: menuItemAppear 0.78s ease-in-out forwards;
+  width: 388px;
+  background-color: #fff;
   border-radius: 12px;
-  margin: 16px 0;
   box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  cursor: pointer;
-}
-#main-ctnr .menu-ctnr .section-ctnr-menuEntry .descript-price-confirmation .header-descript {
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  position: relative;
+  margin: 10px auto 10px auto;
   overflow: hidden;
 }
-#main-ctnr .menu-ctnr .section-ctnr-menuEntry .descript-price-confirmation .header-descript h4 {
-  font-weight: bold;
+#main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li:nth-child(2) {
+  -webkit-animation-delay: 200ms;
+          animation-delay: 200ms;
 }
-#main-ctnr .menu-ctnr .section-ctnr-menuEntry .descript-price-confirmation .header-descript p {
+#main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li:nth-child(3) {
+  -webkit-animation-delay: 400ms;
+          animation-delay: 400ms;
+}
+#main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li .menu-ctnr {
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+#main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li .menu-ctnr h4 {
+  margin: 0 0 10px 0;
+  width: 100%;
+  font-size: 20px;
+  font-weight: 700;
+}
+#main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li .menu-ctnr p {
   margin: 0;
 }
-#main-ctnr .menu-ctnr .section-ctnr-menuEntry .descript-price-confirmation .header-descript h4, #main-ctnr .menu-ctnr .section-ctnr-menuEntry .descript-price-confirmation .header-descript p {
+#main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li .menu-ctnr .menu-item-description {
+  width: 88%;
+}
+#main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li .menu-ctnr .menu-item-price {
+  text-align: right;
+  margin-top: -20px;
+  width: 100%;
+  font-weight: 700;
+}
+#main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li .menu-ctnr > * {
   white-space: nowrap;
-  text-overflow: ellipsis;
   overflow: hidden;
+  text-overflow: ellipsis;
 }
-#main-ctnr .menu-ctnr .section-ctnr-menuEntry .descript-price-confirmation .price {
-  font-weight: bold;
+#main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li .menu-selected-checkbox {
+  background-color: green;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -22%;
+  width: 14%;
+  border-radius: 0 6px 6px 0;
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  padding-left: 8px;
-}
-#main-ctnr .menu-ctnr .section-ctnr-menuEntry .descript-price-confirmation .icon-bloc {
-  background-color: #99e2d0;
-  height: 80px;
-  width: 64px;
-  margin: -16px -80px -16px 16px;
-  transition-duration: 0.5s;
-  border-radius: 0 14px 14px 0;
-  position: relative;
-  left: 15px;
-}
-#main-ctnr .menu-ctnr .section-ctnr-menuEntry .descript-price-confirmation .icon-bloc .icon-confirmation {
-  height: 25px;
-  width: 25px;
-  background-color: #fff;
-  display: flex;
-  align-items: center;
   justify-content: center;
-  border-radius: 100px;
+  align-items: center;
 }
-#main-ctnr .menu-ctnr .section-ctnr-menuEntry .descript-price-confirmation:hover .icon-bloc {
-  margin-right: 0;
+#main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li .menu-selected-checkbox i {
+  background-color: white;
+  padding: 3px;
+  border-radius: 50%;
 }
-#main-ctnr .menu-ctnr .section-ctnr-menuEntry .descript-price-confirmation:hover i {
-  -webkit-animation: icon-spin 0.5s ease-in-out;
-          animation: icon-spin 0.5s ease-in-out;
+#main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li:hover .menu-ctnr {
+  transition: 0.4s linear width;
+  width: 78%;
+}
+#main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li:hover .menu-selected-checkbox {
+  transition: 0.4s linear right;
+  right: 0;
 }
 #main-ctnr .order-ctnr {
   background-color: #f6f6f6;

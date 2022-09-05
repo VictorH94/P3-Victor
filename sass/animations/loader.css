@@ -1,8 +1,11 @@
 .loader {
-  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.loader {
+  position: fixed;
   background-color: #f6f6f6;
   height: 100vh;
   inset: 0;

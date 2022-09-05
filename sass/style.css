@@ -45,7 +45,7 @@ td, th {
   padding: 0;
 }
 
-#restaurant-choice li::before, #restaurant-choice li, #search-section, #main-header, #main-ctnr .order-ctnr, #header-menu .header-ctnr a, #header-menu .header-ctnr {
+#restaurant-choice li::before, #restaurant-choice li, #search-section, #main-header, #main-ctnr .order-ctnr, #header-menu .header-ctnr a, #header-menu .header-ctnr, .loader {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -70,11 +70,14 @@ td, th {
   align-items: center;
 }
 
-.loader {
-  position: fixed;
+#restaurant-choice li::before, #restaurant-choice li, #search-section, #main-header, #main-ctnr .order-ctnr, #header-menu .header-ctnr a, #header-menu .header-ctnr, .loader {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.loader {
+  position: fixed;
   background-color: #f6f6f6;
   height: 100vh;
   inset: 0;
@@ -131,7 +134,7 @@ td, th {
     transform: rotate(360deg);
   }
 }
-#restaurant-choice li::before, #restaurant-choice li, #search-section, #main-header, #main-ctnr .order-ctnr, #header-menu .header-ctnr a, #header-menu .header-ctnr {
+#restaurant-choice li::before, #restaurant-choice li, #search-section, #main-header, #main-ctnr .order-ctnr, #header-menu .header-ctnr a, #header-menu .header-ctnr, .loader {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -410,7 +413,7 @@ td, th {
   font-size: 13px;
 }
 
-#restaurant-choice li::before, #restaurant-choice li, #search-section, #main-header, #header-menu .header-ctnr, #header-menu .header-ctnr a, #main-ctnr .order-ctnr {
+#restaurant-choice li::before, #restaurant-choice li, #search-section, #main-header, .loader, #header-menu .header-ctnr, #header-menu .header-ctnr a, #main-ctnr .order-ctnr {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -678,7 +681,7 @@ td, th {
   font-size: 13px;
 }
 
-#restaurant-choice li::before, #restaurant-choice li, #search-section, #main-header, #header-menu .header-ctnr, #header-menu .header-ctnr a, #main-ctnr .order-ctnr {
+#restaurant-choice li::before, #restaurant-choice li, #search-section, #main-header, .loader, #header-menu .header-ctnr, #header-menu .header-ctnr a, #main-ctnr .order-ctnr {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -946,7 +949,7 @@ td, th {
   font-size: 13px;
 }
 
-#restaurant-choice li::before, #restaurant-choice li, #search-section, #main-header, #header-menu .header-ctnr, #header-menu .header-ctnr a, #main-ctnr .order-ctnr {
+#restaurant-choice li::before, #restaurant-choice li, #search-section, #main-header, .loader, #header-menu .header-ctnr, #header-menu .header-ctnr a, #main-ctnr .order-ctnr {
   display: flex;
   justify-content: center;
   align-items: center;

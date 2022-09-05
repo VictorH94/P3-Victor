@@ -4,6 +4,7 @@
 @import "mixins/mixins.scss";
 @import "extend/extend.scss";
 @import "animations/animations.css";
+@import "animations/loader.scss";
 @import "menu1.scss";
 @import "menu2.scss";
 @import "menu3.scss";
@@ -16,11 +17,11 @@ body, html {
 #main-header {
     font-family: 'Shrikhand', cursive;
     background-color: $white;
-    height: 100px;
+    height: 75px;
     box-shadow: 2px 2px 2px 1px rgba(127, 127, 127, 0.2);
     @extend %flexcenter;
     img {
-        width: 200px;
+        width: 170px;
         padding-top: 15px;
     }
 }
@@ -36,17 +37,18 @@ body, html {
 
 #search-section {
     background-color: $light-grey;
-    height: 85px;
+    height: 55px;
     @extend %flexcenter;
     i {
-        font-size: 20px;
+        font-size: 16px;
     }
     input {
         border: none;
         background-color: transparent;
-        font-size: 20px;
+        font-size: 16px;
         width: 150px;
         padding-left: 14px;
+        font-weight: 600;
    }
 }
 
@@ -55,7 +57,7 @@ body, html {
     height: 350px;
     @extend %flexcolumncenter;
     h2 {
-        font-size: 30px;
+        font-size: 24px;
         font-weight: bold;
         text-align: center;
     }
@@ -69,7 +71,7 @@ body, html {
         background-color: $secondary;
         border: none;
         border-radius: 25px;
-        font-size: 20px;
+        font-size: 16px;
         padding: 12px 20px;
         @include linear-gradient;
         cursor: pointer;
@@ -88,7 +90,7 @@ body, html {
     height: 400px;
     
     h2 {
-        font-size: 27px;
+        font-size: 24px;
         font-weight: 900;
         margin-top: 30px;
         padding: 25px 20px;        
@@ -102,7 +104,7 @@ body, html {
         list-style-type: none;
     }
        
-    & li {
+    li {
         @extend %flexcenter;
         font-size: 22px;
         background-color: $white-smoke;
@@ -115,14 +117,18 @@ body, html {
 
         &:hover {
             @include appearance;
+            background-color: $primary2;
+        }
+        & i:hover {
+            color: $primary;
         }
         position: relative;
 
         &::before {
             counter-increment: number;
             content: counters(number,".") " ";
-            width: 30px;
-            height: 30px;
+            width: 25px;
+            height: 25px;
             border-radius: 50%;
             position: absolute;
             left: -12px;
@@ -132,18 +138,15 @@ body, html {
         }
     } 
         & i {
-            font-size: 25px;
+            font-size: 20px;
             padding-right: 20px;
             color: $grey;
-
-            &:hover {
-                color: $primary;
-            }
         }
 
         & span {
             padding-left: 10px;
-            font-size: 20px;
+            font-size: 16px;
+            font-weight: 700;
         }
 }
 
@@ -151,21 +154,29 @@ body, html {
     background-color: $white-smoke;
     height: 1150px;
     padding: 30px 20px;
-    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;  
+            
     .card-restaurant {
         max-width: 100%;
         margin: auto;
         position: relative;
-
+        
         h2 {
             font-size: 22px;
             font-weight: 900;
         }
 
-        .menu_card {
-            @extend %flexcolumncenter;
-                        
-            .card-bloc {
+        & .menu_card {
+            max-width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+                                    
+            & .card-bloc {
                 background-color: $white;
                 border-radius: 15px;
                 text-decoration: none;
@@ -173,15 +184,15 @@ body, html {
                 position: relative;
                 margin: 12px 0px 5px 0px;
                 border: 1px solid transparent;
-
-                .img-card {
+               
+                & .img-card {
                     height: 170px;
-                    width: 330px;
+                    width: 750px;
                     border-radius: 15px 15px 0 0;
                     object-fit: cover;
                 }
 
-                .bloc-new {
+                & .bloc-new {
                     background-color: $tertiary;
                     color: $dark-green;
                     border-radius: 3px;
@@ -189,25 +200,27 @@ body, html {
                     position: absolute;
                     top: 14px;
                     right: 10px;
+                    font-size: 13px;
                 }
 
-                .menu_description {
+                & .menu_description {
                     background-color: $white;
                     @extend %flexbetweencenter;
                     padding: 15px 20px 15px 15px;
                     position: relative;
                     
-                    .menu_card_description {
+                    & .menu_card_description {
                         @extend %flexcolumstart;
 
                         h3 {
                             color: $black;
-                            font-weight: bold;
+                            font-weight: 900;
                         }
 
                         span {
                             color: $dark-grey;
                             font-weight: bold;
+                            font-size: 15px;
                         }
                     }
                     
@@ -215,9 +228,10 @@ body, html {
                         position: absolute;
                         right: 16px;
                         transform: translateY(-50%);
+                        font-size: 20px;
                     }
 
-                    .icon-solid {
+                    & .icon-solid {
                         color: transparent;
                         @include linear-gradient(0.9);
                         background-clip: text;
@@ -252,21 +266,21 @@ body, html {
             font-size: 17px;
         }
 
-        .footer-ul {
+        & .footer-ul {
             @extend %flexcolumstart;
             list-style: none;
             line-height: 28px;
             padding-top: 10px;
             font-size: 14px;
 
-            .footer-li {
+            & .footer-li {
                 margin-top: 0;
 
-                .footer-link {
+                & .footer-link {
                     text-decoration: none;
                     color:#fff;
 
-                    .footer-icon {
+                    & .footer-icon {
                         padding-right: 10px;
                         font-size: 13px;
                     }

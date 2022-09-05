@@ -167,7 +167,7 @@
 #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li .menu-ctnr h4 {
   margin: 0 0 10px 0;
   width: 100%;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
 }
 #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li .menu-ctnr p {
@@ -188,12 +188,12 @@
   text-overflow: ellipsis;
 }
 #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li .menu-selected-checkbox {
-  background-color: green;
+  background-color: #99E2D0;
   position: absolute;
   top: 0;
   bottom: 0;
   right: -22%;
-  width: 14%;
+  width: 16%;
   border-radius: 0 6px 6px 0;
   display: flex;
   justify-content: center;
@@ -214,7 +214,8 @@
 }
 #main-ctnr .order-ctnr {
   background-color: #f6f6f6;
-  height: 110px;
+  height: 140px;
+  margin-top: -19px;
 }
 #main-ctnr .order-ctnr .order-menu {
   width: 175px;

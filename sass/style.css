@@ -51,7 +51,7 @@ td, th {
   align-items: center;
 }
 
-#restaurants .card-restaurant .menu_card, #restaurant-choice ol, #search-restaurant {
+#restaurant-choice ol, #search-restaurant {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -70,13 +70,74 @@ td, th {
   align-items: center;
 }
 
+.loader {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f6f6f6;
+  height: 100vh;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.9;
+  -webkit-animation: disappear 200ms 3s forwards;
+          animation: disappear 200ms 3s forwards;
+  transform-origin: top;
+}
+.loader::after {
+  content: "";
+  height: 120px;
+  width: 120px;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #FF79DA;
+  border-bottom: 5px solid #99E2D0;
+  border-radius: 50%;
+  -webkit-animation: spin 1s infinite ease-in-out;
+          animation: spin 1s infinite ease-in-out;
+  -webkit-animation-iteration-count: 3;
+          animation-iteration-count: 3;
+}
+
+@-webkit-keyframes disappear {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes disappear {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@-webkit-keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 #restaurant-choice li::before, #restaurant-choice li, #search-section, #main-header, #main-ctnr .order-ctnr, #header-menu .header-ctnr a, #header-menu .header-ctnr {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#restaurants .card-restaurant .menu_card, #restaurant-choice ol, #search-restaurant {
+#restaurant-choice ol, #search-restaurant {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -252,7 +313,7 @@ td, th {
 #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li .menu-ctnr h4 {
   margin: 0 0 10px 0;
   width: 100%;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
 }
 #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li .menu-ctnr p {
@@ -273,12 +334,12 @@ td, th {
   text-overflow: ellipsis;
 }
 #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li .menu-selected-checkbox {
-  background-color: green;
+  background-color: #99E2D0;
   position: absolute;
   top: 0;
   bottom: 0;
   right: -22%;
-  width: 14%;
+  width: 16%;
   border-radius: 0 6px 6px 0;
   display: flex;
   justify-content: center;
@@ -299,7 +360,8 @@ td, th {
 }
 #main-ctnr .order-ctnr {
   background-color: #f6f6f6;
-  height: 110px;
+  height: 140px;
+  margin-top: -19px;
 }
 #main-ctnr .order-ctnr .order-menu {
   width: 175px;
@@ -355,11 +417,11 @@ body, html {
 #main-header {
   font-family: "Shrikhand", cursive;
   background-color: #fff;
-  height: 100px;
+  height: 75px;
   box-shadow: 2px 2px 2px 1px rgba(127, 127, 127, 0.2);
 }
 #main-header img {
-  width: 200px;
+  width: 170px;
   padding-top: 15px;
 }
 
@@ -374,17 +436,18 @@ body, html {
 
 #search-section {
   background-color: #eaeaea;
-  height: 85px;
+  height: 55px;
 }
 #search-section i {
-  font-size: 20px;
+  font-size: 16px;
 }
 #search-section input {
   border: none;
   background-color: transparent;
-  font-size: 20px;
+  font-size: 16px;
   width: 150px;
   padding-left: 14px;
+  font-weight: 600;
 }
 
 #search-restaurant {
@@ -392,7 +455,7 @@ body, html {
   height: 350px;
 }
 #search-restaurant h2 {
-  font-size: 30px;
+  font-size: 24px;
   font-weight: bold;
   text-align: center;
 }
@@ -406,7 +469,7 @@ body, html {
   background-color: #FF79DA;
   border: none;
   border-radius: 25px;
-  font-size: 20px;
+  font-size: 16px;
   padding: 12px 20px;
   background-image: linear-gradient(to top, rgba(147, 86, 220, 0.8), rgba(255, 121, 218, 0.8));
   cursor: pointer;
@@ -424,7 +487,7 @@ body, html {
   height: 400px;
 }
 #restaurant-choice h2 {
-  font-size: 27px;
+  font-size: 24px;
   font-weight: 900;
   margin-top: 30px;
   padding: 25px 20px;
@@ -448,12 +511,16 @@ body, html {
 }
 #restaurant-choice li:hover {
   transform: scale(1.02);
+  background-color: #f5edff;
+}
+#restaurant-choice li i:hover {
+  color: #9356DC;
 }
 #restaurant-choice li::before {
   counter-increment: number;
   content: counters(number, ".") " ";
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
   position: absolute;
   left: -12px;
@@ -461,22 +528,24 @@ body, html {
   color: #fff;
 }
 #restaurant-choice i {
-  font-size: 25px;
+  font-size: 20px;
   padding-right: 20px;
   color: #7e7e7e;
 }
-#restaurant-choice i:hover {
-  color: #9356DC;
-}
 #restaurant-choice span {
   padding-left: 10px;
-  font-size: 20px;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 #restaurants {
   background-color: #f6f6f6;
   height: 1150px;
   padding: 30px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 #restaurants .card-restaurant {
   max-width: 100%;
@@ -486,6 +555,13 @@ body, html {
 #restaurants .card-restaurant h2 {
   font-size: 22px;
   font-weight: 900;
+}
+#restaurants .card-restaurant .menu_card {
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 #restaurants .card-restaurant .menu_card .card-bloc {
   background-color: #fff;
@@ -498,7 +574,7 @@ body, html {
 }
 #restaurants .card-restaurant .menu_card .card-bloc .img-card {
   height: 170px;
-  width: 330px;
+  width: 750px;
   border-radius: 15px 15px 0 0;
   -o-object-fit: cover;
      object-fit: cover;
@@ -511,6 +587,7 @@ body, html {
   position: absolute;
   top: 14px;
   right: 10px;
+  font-size: 13px;
 }
 #restaurants .card-restaurant .menu_card .card-bloc .menu_description {
   background-color: #fff;
@@ -519,16 +596,18 @@ body, html {
 }
 #restaurants .card-restaurant .menu_card .card-bloc .menu_description .menu_card_description h3 {
   color: #000;
-  font-weight: bold;
+  font-weight: 900;
 }
 #restaurants .card-restaurant .menu_card .card-bloc .menu_description .menu_card_description span {
   color: #A9A9A9;
   font-weight: bold;
+  font-size: 15px;
 }
 #restaurants .card-restaurant .menu_card .card-bloc .menu_description i {
   position: absolute;
   right: 16px;
   transform: translateY(-50%);
+  font-size: 20px;
 }
 #restaurants .card-restaurant .menu_card .card-bloc .menu_description .icon-solid {
   color: transparent;

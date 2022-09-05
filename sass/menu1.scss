@@ -157,7 +157,7 @@
                         h4 {
                             margin: 0 0 10px 0;
                             width: 100%;
-                            font-size: 20px;
+                            font-size: 18px;
                             font-weight: 700;
                         }
                 
@@ -182,12 +182,12 @@
                         }
                     }
                     .menu-selected-checkbox {
-                        background-color: green;
+                        background-color: $tertiary;
                         position: absolute;
                         top: 0;
                         bottom: 0;
                         right: -22%;
-                        width: 14%;
+                        width: 16%;
                         border-radius: 0 6px 6px 0;
                         display: flex;
                         justify-content: center;
@@ -216,7 +216,8 @@
     
     .order-ctnr {
         background-color: $white-smoke;
-        height:110px;
+        height: 140px;
+        margin-top: -19px;
         @extend %flexcenter;
 
         .order-menu {

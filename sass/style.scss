@@ -104,7 +104,7 @@ body, html {
         list-style-type: none;
     }
        
-    li {
+    & li {
         @extend %flexcenter;
         font-size: 22px;
         background-color: $white-smoke;
@@ -118,9 +118,6 @@ body, html {
         &:hover {
             @include appearance;
             background-color: $primary2;
-        }
-        & i:hover {
-            color: $primary;
         }
         position: relative;
 
@@ -141,6 +138,10 @@ body, html {
             font-size: 20px;
             padding-right: 20px;
             color: $grey;
+
+            &:hover {
+                color: $primary;
+            }
         }
 
         & span {

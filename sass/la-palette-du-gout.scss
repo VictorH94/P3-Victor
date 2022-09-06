@@ -1,17 +1,7 @@
 @import "variables/variables.scss";
 @import "mixins/mixins.scss";
 @import "extend/extend.scss";
-
-@keyframes menuItemAppear {
-    from {
-        transform: translateY(30px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
+@import "animations/animations.css";
 
 #header-menu {
     font-family: "Shrikhand", sans-serif;
@@ -35,7 +25,7 @@
             }
         }
 
-        .img-logo-ohmyfood {
+        & .img-logo-ohmyfood {
             @include font-family;
             height: 30px;
             max-width: 100%;
@@ -102,7 +92,7 @@
         width: 100%;
         background-color: $white-smoke;
         
-        .section-menu-ctnr {
+        & .section-menu-ctnr {
             display: flex;
             flex-direction: column;
             width: 92%;
@@ -125,7 +115,7 @@
                 }
             }
 
-            .menu-list {
+            & .menu-list {
                 list-style-type: none;
                 padding: 0;
                 width: 100%;
@@ -150,7 +140,7 @@
                     &:nth-child(3) {
                         animation-delay: 400ms;
                     }
-                    .menu-ctnr {
+                    & .menu-ctnr {
                         padding: 10px;
                         width: 100%;
                         box-sizing: border-box;
@@ -197,8 +187,9 @@
                             padding: 3px;
                             border-radius: 50%;
                         }
+                        
                     }
-                    
+                                        
                     &:hover {
                         .menu-ctnr { 
                             transition: 0.4s linear width;
@@ -208,19 +199,23 @@
                             transition: 0.4s linear right;
                             right: 0;
                         }
+
+                        i {
+                            animation: icon-spin 0.7s ease-in-out;
+                        }
                     } 
                 }
             }
         }
     }
     
-    .order-ctnr {
+    & .order-ctnr {
         background-color: $white-smoke;
         height: 140px;
         margin-top: -19px;
         @extend %flexcenter;
 
-        .order-menu {
+        & .order-menu {
             width: 175px;
             background-color: #FF79DA;
             border: none;
@@ -251,21 +246,21 @@
             font-size: 17px;
         }
 
-        .footer-ul {
+        & .footer-ul {
             @extend %flexcolumstart;
             list-style: none;
             line-height: 28px;
             padding-top: 10px;
             font-size: 14px;
 
-            .footer-li {
+            & .footer-li {
                 margin-top: 0;
 
-                .footer-link {
+                & .footer-link {
                     text-decoration: none;
                     color:#fff;
 
-                    .footer-icon {
+                    & .footer-icon {
                         padding-right: 10px;
                         font-size: 13px;
                     }

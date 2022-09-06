@@ -1,6 +1,10 @@
 /*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap");
 @import "animations/animations.css";
+@import "animations/animations.css";
+@import "animations/animations.css";
+@import "animations/animations.css";
+@import "animations/animations.css";
 html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
@@ -159,27 +163,6 @@ td, th {
   align-items: center;
 }
 
-@-webkit-keyframes menuItemAppear {
-  from {
-    transform: translateY(30px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes menuItemAppear {
-  from {
-    transform: translateY(30px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
 #header-menu {
   font-family: "Shrikhand", sans-serif;
   position: relative;
@@ -360,6 +343,10 @@ td, th {
 #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li:hover .menu-selected-checkbox {
   transition: 0.4s linear right;
   right: 0;
+}
+#main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li:hover i {
+  -webkit-animation: icon-spin 0.7s ease-in-out;
+          animation: icon-spin 0.7s ease-in-out;
 }
 #main-ctnr .order-ctnr {
   background-color: #f6f6f6;
@@ -438,16 +425,6 @@ td, th {
   align-items: center;
 }
 
-@keyframes menuItemAppear {
-  from {
-    transform: translateY(30px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
 #header-menu {
   font-family: "Shrikhand", sans-serif;
   position: relative;
@@ -628,6 +605,10 @@ td, th {
 #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li:hover .menu-selected-checkbox {
   transition: 0.4s linear right;
   right: 0;
+}
+#main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li:hover i {
+  -webkit-animation: icon-spin 0.7s ease-in-out;
+          animation: icon-spin 0.7s ease-in-out;
 }
 #main-ctnr .order-ctnr {
   background-color: #f6f6f6;
@@ -706,16 +687,6 @@ td, th {
   align-items: center;
 }
 
-@keyframes menuItemAppear {
-  from {
-    transform: translateY(30px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
 #header-menu {
   font-family: "Shrikhand", sans-serif;
   position: relative;
@@ -896,6 +867,10 @@ td, th {
 #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li:hover .menu-selected-checkbox {
   transition: 0.4s linear right;
   right: 0;
+}
+#main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li:hover i {
+  -webkit-animation: icon-spin 0.7s ease-in-out;
+          animation: icon-spin 0.7s ease-in-out;
 }
 #main-ctnr .order-ctnr {
   background-color: #f6f6f6;
@@ -974,16 +949,6 @@ td, th {
   align-items: center;
 }
 
-@keyframes menuItemAppear {
-  from {
-    transform: translateY(30px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
 #header-menu {
   font-family: "Shrikhand", sans-serif;
   position: relative;
@@ -1164,6 +1129,10 @@ td, th {
 #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li:hover .menu-selected-checkbox {
   transition: 0.4s linear right;
   right: 0;
+}
+#main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li:hover i {
+  -webkit-animation: icon-spin 0.7s ease-in-out;
+          animation: icon-spin 0.7s ease-in-out;
 }
 #main-ctnr .order-ctnr {
   background-color: #f6f6f6;
@@ -1320,6 +1289,9 @@ body, html {
   transform: scale(1.02);
   background-color: #f5edff;
 }
+#restaurant-choice li:hover i {
+  color: #9356DC;
+}
 #restaurant-choice li::before {
   counter-increment: number;
   content: counters(number, ".") " ";
@@ -1335,9 +1307,6 @@ body, html {
   font-size: 20px;
   padding-right: 20px;
   color: #7e7e7e;
-}
-#restaurant-choice i:hover {
-  color: #9356DC;
 }
 #restaurant-choice span {
   padding-left: 10px;

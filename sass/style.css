@@ -4,7 +4,6 @@
 @import "animations/animations.css";
 @import "animations/animations.css";
 @import "animations/animations.css";
-@import "animations/animations.css";
 html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
@@ -81,6 +80,43 @@ td, th {
   align-items: center;
 }
 
+@-webkit-keyframes icon-spin {
+  0% {
+    transform: rotate(-360deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes icon-spin {
+  0% {
+    transform: rotate(-360deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+@-webkit-keyframes menuItemAppear {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes menuItemAppear {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 #main-ctnr #main-page-ctnr #restaurant-choice ol li::before, #main-ctnr #main-page-ctnr #restaurant-choice ol li, #main-ctnr #main-page-ctnr #search-section, #main-ctnr #main-header, #main-ctnr .order-ctnr, #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li .menu-selected-checkbox, #header-menu .header-ctnr a, #header-menu .header-ctnr, .loader {
   display: flex;
   justify-content: center;

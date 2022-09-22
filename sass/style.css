@@ -381,6 +381,7 @@ td, th {
 #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li:hover .menu-selected-checkbox {
   transition: 0.4s linear right;
   right: 0;
+  color: #99E2D0;
 }
 #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li:hover i {
   -webkit-animation: icon-spin 0.7s ease-in-out;
@@ -638,6 +639,7 @@ td, th {
 #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li:hover .menu-selected-checkbox {
   transition: 0.4s linear right;
   right: 0;
+  color: #99E2D0;
 }
 #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li:hover i {
   -webkit-animation: icon-spin 0.7s ease-in-out;
@@ -895,6 +897,7 @@ td, th {
 #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li:hover .menu-selected-checkbox {
   transition: 0.4s linear right;
   right: 0;
+  color: #99E2D0;
 }
 #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li:hover i {
   -webkit-animation: icon-spin 0.7s ease-in-out;
@@ -1152,6 +1155,7 @@ td, th {
 #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li:hover .menu-selected-checkbox {
   transition: 0.4s linear right;
   right: 0;
+  color: #99E2D0;
 }
 #main-ctnr #menu-ctnr .section-menu-ctnr .menu-list li:hover i {
   -webkit-animation: icon-spin 0.7s ease-in-out;
